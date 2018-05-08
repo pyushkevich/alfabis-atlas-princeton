@@ -1,0 +1,50 @@
+{
+  "name": "ASHS-Princeton",
+  "version": "1.0.0",
+  "keywords": [
+    "hippocampus",
+    "subfields",
+    "brain",
+    "young",
+    "mtl"
+  ],
+  "shortdesc": "Princeton Young Adult 3T ASHS Atlas",
+  "longdesc": "Automatic segmentation of hippocampal subfields and MTL subregions in high-resolution T2-weighted 7 Tesla MRI scans, using an atlas of healthy young adults.  This atlas set was constructed from MRI scans and manual segmentations graciously shared by Mariam Aly, Nicholas Hindy, Nicholas Turk-Browne and colleagues at the Department of Psychology, Princeton University.",
+  "url": "https://sites.google.com/view/ashs-dox/home",
+  "tags": [
+    {
+      "name": "T2-MRI",
+      "type": "MainImage",
+      "hint": "A high-resolution (e.g., 0.4x0.4x1.5mm^3) T2-weighted MRI scan with oblique coronal orientation parallel to hippocampal main axis. This scan must be the main image in the workspace.",
+      "required": true
+    },
+    {
+      "name": "T1-MRI",
+      "type": "OverlayImage",
+      "hint": "Roughtly isotropic (e.g., 1x1x1mm^3) T1-weighted MRI scan of the whole brain.",
+      "required": true
+    }
+  ],
+  "parameters": [
+    {
+      "name": "corr_mode",
+      "displayname" : "Correction Mode",
+      "hint" : "ASHS offers performs segmentation error correction based on a machine learning algorithm. The 'intensity and shape correction' mode is suitable when your data closely matches the intensity characteristics of the ASHS atlas (see paper for details). Otherwise , 'shape correction' is recommended. You may also choose to disable error correction.",
+      "type" : "choose_one",
+      "choices" : [
+        {
+          "name" : "none",
+          "displayname" : "No error correction"
+        },
+        {
+          "name" : "shape",
+          "displayname" : "Shape correction"
+        },
+        {
+          "name" : "intensity",
+          "displayname" : "Intensity correction"
+        }
+        ]
+    }
+  ]
+}
